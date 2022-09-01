@@ -344,7 +344,7 @@ window.onload = function () {
   $resetButton.addEventListener("click", resetLocalStorage);
   // Iniciar
   renderizarImagen();
-  location.reload();
+ // location.reload();
   // Get the modal
   const openEls = document.querySelectorAll("[data-open]");
   const closeEls = document.querySelectorAll("[data-close]");
