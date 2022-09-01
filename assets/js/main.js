@@ -1,14 +1,14 @@
 window.onload = function () {
   // Variables
   var IMAGENES = [
-    {
-      img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/leviatan_big-1-150x150.png",
-      name: "LEVIATÁN",
-    },
-    {
-      img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/furious_big-1-150x150.png",
-      name: "FURIOUS GAMING",
-    },
+   // {
+     // img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/leviatan_big-1-150x150.png",
+    //  name: "LEVIATÁN",
+    //},
+   // {
+    //  img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/furious_big-1-150x150.png",
+   //   name: "FURIOUS GAMING",
+   // },
     {
       img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/ebro_gaming_big-150x150.png",
       name: "EBRO GAMING",
@@ -45,10 +45,10 @@ window.onload = function () {
 
   var IMAGENES_SELECTED = [];
   var SELECTEDG1 = [
-    {
-      img: "",
-      name: "EQUIPO 1",
-    },
+   // {
+    //  img: "",
+ //     name: "EQUIPO 1",
+  //  },
     {
       img: "",
       name: "EQUIPO 2",
@@ -68,10 +68,10 @@ window.onload = function () {
   ];
 
   var SELECTEDG2 = [
-    {
-      img: "",
-      name: "EQUIPO 1",
-    },
+    //{
+   //   img: "",
+   //   name: "EQUIPO 1",
+   // },
     {
       img: "",
       name: "EQUIPO 2",
