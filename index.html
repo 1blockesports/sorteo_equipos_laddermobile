@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Sorteo de equipos</title>
+</head>
+<style>
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 130px;
+    height: 130px;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .carousel div {
+    display: flex;
+    width: 130px;
+    height: 130px;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <div class="results-header">
+    <div class="carousel-container" style="display:none;">
+      <div class="carousel">
+        <div id="imagen"></div>
+      </div>
+      <div class="controles">
+        <a href="#" class="pushable" id="play"><span class="front">Iniciar</span></a>
+      </div>
+    </div>
+
+    <div class="roulette" style="display:none;">
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/leviatan_big-1-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/furious_big-1-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/ebro_gaming_big-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/stone_movistar_big-1-150x150.png">
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/rosario_central_big-1-150x150.png">
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/eob_big-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/osaka_big-1-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/404_big-1-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/team_leite_big-150x150.png" alt="" />
+      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/mezexis-150x150.png" alt="" />
+
+    </div>
+    <div class="btn_container">
+        <button class="btn btn-large btn-primary start"> Iniciar </button>
+        <!--<button class="stop btn-large btn btn-warning"> STOP </button>-->
+    </div>
+    <a href="#" id="reset">Reiniciar</a>
+  </div>
+
+  <div class="controller-container">
+    <a href="#" id="stop1" class="select_button" disabled="">
+      <span>BLOQUE A</span>
+    </a>
+    <a href="#" id="stop2" class="select_button" disabled="">
+      <span>BLOQUE B</span>
+    </a>
+  </div>
+
+
+  <div class="results-content">
+    <div class="column-container">
+
+      <div class="column-left">
+        <span class="group-indicator">Bloque A</span>
+        <div id="selected-1" class="group-select">
+          <span>1</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 1</p>
+        </div>
+        <div id="selected-2" class="group-select">
+          <span>2</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 2</p>
+        </div>
+        <div id="selected-3" class="group-select">
+          <span>3</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 3</p>
+        </div>
+        <div id="selected-4" class="group-select">
+          <span>4</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 4</p>
+        </div>
+        <div id="selected-5" class="group-select">
+          <span>5</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 5</p>
+        </div>
+      </div>
+    </div>
+    <div class="column-container">
+
+      <div class="column-right">
+        <span class="group-indicator">Bloque B</span>
+        <div id="selected-21" class="group-select">
+          <span>1</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 1</p>
+        </div>
+        <div id="selected-22" class="group-select">
+          <span>2</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 2</p>
+        </div>
+        <div id="selected-23" class="group-select">
+          <span>3</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 3</p>
+        </div>
+        <div id="selected-24" class="group-select">
+          <span>4</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 4</p>
+        </div>
+        <div id="selected-25" class="group-select">
+          <span>5</span>
+          <img src="./assets/img/logo-laddermobile.png" class="logo" />
+          <p>EQUIPO 5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal1" data-animation="slideInOutLeft" style="display: none;">
+    <div class="modal-dialog">
+      <section class="modal-content">
+        <img src="" id="img-modal" />
+        <!-- <button class="close-modal" aria-label="close modal" data-close>
+          Cerrar
+        </button> -->
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/roulette.js"></script>
+  <script>
+
+
+    var option = {
+      speed: 19,
+      duration: 3600,
+      stopImageNumber: -1,
+      startCallback: function () {
+        console.log('start');
+        $('.controller-container').css("opacity","1")
+      },
+      slowDownCallback: function () {
+        console.log('slowDown');
+      },
+      stopCallback: function ($stopElm) {
+        const element = document.querySelector('.roulette-inner')
+        const style = getComputedStyle(element)
+        const backgroundColor = style.transform;
+
+        console.log(backgroundColor) // rgb(0, 0, 0)
+        console.log('stop');
+      }
+    }
+    var rouletter = $('div.roulette').roulette(option);
+    $('.stop').attr('disabled', 'true');
+    $('.start').click(function () {
+      rouletter.roulette('start');
+    });
+
+
+
+
+
+  </script>
+</body>
+
+</html>
