@@ -39,7 +39,7 @@ window.onload = function () {
   var SELECTEDG1 = [
     {
       img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/leviatan_big-1-150x150.png",
-      name: "LEVIATÁN",
+      name: "Leviatán",
     },
     {
       img: "",
@@ -62,7 +62,7 @@ window.onload = function () {
   var SELECTEDG2 = [
     {
       img: "https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/furious_big-1-150x150.png",
-      name: "FURIOUS GAMING",
+      name: "Furious Gaming",
     },
     {
       img: "",
@@ -87,7 +87,6 @@ window.onload = function () {
   let $resetButton = document.getElementById("reset");
   let $counter_display = document.getElementById("counter_display");
   let $botonPlay = document.getElementById("play");
-  console.log($botonPlay);
   let $video = document.getElementById("vid");
   let $botonStop1 = document.getElementById("stop1");
   let $botonStop2 = document.getElementById("stop2");
@@ -201,8 +200,8 @@ window.onload = function () {
     // $botonRetroceder.setAttribute('disabled', true);
     $botonPlay.setAttribute("disabled", true);
     // $video.play();
-    $botonPlay.style.display = "none!important";
-    //$counter_display.classList.add("animation_start");
+    $botonPlay.style.display = "none";
+    $counter_display.classList.add("animation_start");
     $botonStop1.removeAttribute("disabled");
     $botonStop2.removeAttribute("disabled");
   }
@@ -243,7 +242,6 @@ window.onload = function () {
       return;
     }
     let ranSelect = posicionActual;
-    console.log(ranSelect)
     let objSelected = IMAGENES[ranSelect];
 
     document.getElementById("img-modal").src = objSelected.img;
