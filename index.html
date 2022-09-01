@@ -9,26 +9,6 @@
   <link rel="stylesheet" href="./assets/css/styles.css">
   <title>Sorteo de equipos</title>
 </head>
-<style>
-  .carousel {
-    display: flex;
-    overflow: hidden;
-    width: 130px;
-    height: 130px;
-    justify-content: center;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .carousel div {
-    display: flex;
-    width: 130px;
-    height: 130px;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
-
 <body>
   <div class="results-header">
     <div class="carousel-container" style="display:none;">
@@ -36,13 +16,11 @@
         <div id="imagen"></div>
       </div>
       <div class="controles">
-        <a href="#" class="pushable" id="play"><span class="front">Iniciar</span></a>
+        <a href="#" class="pushable"  id="play"><span class="front">Iniciar</span></a>
       </div>
     </div>
 
     <div class="roulette" style="display:none;">
-      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/leviatan_big-1-150x150.png" alt="" />
-      <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/furious_big-1-150x150.png" alt="" />
       <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/ebro_gaming_big-150x150.png" alt="" />
       <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/stone_movistar_big-1-150x150.png">
       <img src="https://laddermobile.1blockesports.com/wp-content/uploads/2022/08/rosario_central_big-1-150x150.png">
@@ -54,7 +32,7 @@
 
     </div>
     <div class="btn_container">
-        <button class="btn btn-large btn-primary start"> Iniciar </button>
+        <button class="btn btn-large btn-primary start pushable"  id="play"> Iniciar </button>
         <!--<button class="stop btn-large btn btn-warning"> STOP </button>-->
     </div>
     <a href="#" id="reset">Reiniciar</a>
@@ -148,41 +126,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/roulette.js"></script>
-  <script>
-
-
-    var option = {
-      speed: 19,
-      duration: 3600,
-      stopImageNumber: -1,
-      startCallback: function () {
-        console.log('start');
-        $('.controller-container').css("opacity","1")
-      },
-      slowDownCallback: function () {
-        console.log('slowDown');
-      },
-      stopCallback: function ($stopElm) {
-        const element = document.querySelector('.roulette-inner')
-        const style = getComputedStyle(element)
-        const backgroundColor = style.transform;
-
-        console.log(backgroundColor) // rgb(0, 0, 0)
-        console.log('stop');
-      }
-    }
-    var rouletter = $('div.roulette').roulette(option);
-    $('.stop').attr('disabled', 'true');
-    $('.start').click(function () {
-      rouletter.roulette('start');
-    });
-
-
-
-
-
-  </script>
 </body>
 
 </html>
